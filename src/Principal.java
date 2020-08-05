@@ -26,7 +26,7 @@ public class Principal {
     }
 
     public static void decifraCodigo(String nomeArquivo, ArrayList<Character> alfabeto) { // método que decifra o código
-        String linhas[] = new String[100];
+        String linhas[] = new String[10];
         int numLinhas = 0;
 
         Path path1 = Paths.get(nomeArquivo); // localiza o arquivo que será lido
@@ -98,7 +98,7 @@ public class Principal {
                     else {
                         letraOriginal = alfabeto.get(posicaoDaLetraOriginal);
                     }
-                    textoDecifrado = textoDecifrado + letraOriginal;
+                    textoDecifrado = textoDecifrado + letraOriginal; // construção da string com o texto decifrado, adicionando caractere a caractere
 
                 }
 
