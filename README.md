@@ -5,6 +5,8 @@ Depois de receber a resposta, consegui entender bem e desenvolver o código.
 
 A linguagem que utilizei é a linguagem com a qual eu tenho maior experiência e intimidade: *Java*.
 
+Para rodar o programa, basta ir na pasta src e depois ir na classe Principal. Na classe principal há o main que roda o programa.
+
 O código no geral é divido em **duas partes**: o método *main* que executa o programa e um método *static* que é chamado no main para de fato decifrar a mensagem.
 
 O método *main* do código é bem simples:
