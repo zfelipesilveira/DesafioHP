@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String args[]){
 
-
         // construindo a arraylist de caracteres utilizados para a criptografia
         String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ.,;!?";
         ArrayList<Character> alfabeto = new ArrayList<Character>();
@@ -19,9 +18,6 @@ public class Principal {
 
         // chamando o método que lê o arquivo txt, decifra o código e printa no console a mensagem descriptografada
         decifraCodigo("SecretMessage.txt",alfabeto);
-
-
-
 
     }
 
@@ -58,39 +54,14 @@ public class Principal {
                 int posicaoNaTabela = alfabeto.indexOf(ch); // pegando a posição utilizada para criptografar o caractere
                 int posicaoDaLetraOriginal = posicaoNaTabela - key; // pegando a posição à qual foi acrescida a key para criptografar, é a posição que me serve para descobrir o caractere "de verdade"
 
-                // ifs utilizados para percorrer a tabela de letras/números caso na hora de criptografar a posição utilizada tenha sido maior que 30
 
-                if (posicaoDaLetraOriginal == -1) posicaoDaLetraOriginal = 30;
-                if (posicaoDaLetraOriginal == -2) posicaoDaLetraOriginal = 29;
-                if (posicaoDaLetraOriginal == -3) posicaoDaLetraOriginal = 28;
-                if (posicaoDaLetraOriginal == -4) posicaoDaLetraOriginal = 27;
-                if (posicaoDaLetraOriginal == -5) posicaoDaLetraOriginal = 26;
-                if (posicaoDaLetraOriginal == -6) posicaoDaLetraOriginal = 25;
-                if (posicaoDaLetraOriginal == -7) posicaoDaLetraOriginal = 24;
-                if (posicaoDaLetraOriginal == -8) posicaoDaLetraOriginal = 23;
-                if (posicaoDaLetraOriginal == -9) posicaoDaLetraOriginal = 22;
-                if (posicaoDaLetraOriginal == -10) posicaoDaLetraOriginal = 21;
-                if (posicaoDaLetraOriginal == -11) posicaoDaLetraOriginal = 20;
-                if (posicaoDaLetraOriginal == -12) posicaoDaLetraOriginal = 19;
-                if (posicaoDaLetraOriginal == -13) posicaoDaLetraOriginal = 18;
-                if (posicaoDaLetraOriginal == -14) posicaoDaLetraOriginal = 17;
-                if (posicaoDaLetraOriginal == -15) posicaoDaLetraOriginal = 16;
-                if (posicaoDaLetraOriginal == -16) posicaoDaLetraOriginal = 15;
-                if (posicaoDaLetraOriginal == -17) posicaoDaLetraOriginal = 14;
-                if (posicaoDaLetraOriginal == -18) posicaoDaLetraOriginal = 13;
-                if (posicaoDaLetraOriginal == -19) posicaoDaLetraOriginal = 12;
-                if (posicaoDaLetraOriginal == -20) posicaoDaLetraOriginal = 11;
-                if (posicaoDaLetraOriginal == -21) posicaoDaLetraOriginal = 10;
-                if (posicaoDaLetraOriginal == -22) posicaoDaLetraOriginal = 9;
-                if (posicaoDaLetraOriginal == -23) posicaoDaLetraOriginal = 8;
-                if (posicaoDaLetraOriginal == -24) posicaoDaLetraOriginal = 7;
-                if (posicaoDaLetraOriginal == -25) posicaoDaLetraOriginal = 6;
-                if (posicaoDaLetraOriginal == -26) posicaoDaLetraOriginal = 5;
-                if (posicaoDaLetraOriginal == -27) posicaoDaLetraOriginal = 4;
-                if (posicaoDaLetraOriginal == -28) posicaoDaLetraOriginal = 3;
-                if (posicaoDaLetraOriginal == -29) posicaoDaLetraOriginal = 2;
-                if (posicaoDaLetraOriginal == -30) posicaoDaLetraOriginal = 1;
-                if (posicaoDaLetraOriginal == -31) posicaoDaLetraOriginal = 0;
+                // verifica se a posição da letra original é menor que zero || se for, soma-se ao tamanho do alfabeto para percorrê-lo de "forma inversa"
+                // ex: se a posição obtida for -1, o código abaixo corrige para 30, que é a posição que foi utilizada no início da criptografia
+                if(posicaoDaLetraOriginal<0){
+                    posicaoDaLetraOriginal = posicaoDaLetraOriginal + 31;
+
+                }
+
 
                 if (posicaoDaLetraOriginal <= 30) {
                     if (ch == '#') letraOriginal = ' ';
@@ -101,7 +72,6 @@ public class Principal {
                     textoDecifrado = textoDecifrado + letraOriginal; // construção da string com o texto decifrado, adicionando caractere a caractere
 
                 }
-
 
             }
 
