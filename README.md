@@ -47,6 +47,8 @@ try (BufferedReader reader = Files.newBufferedReader(path1, Charset.defaultChars
 
 Nesta última parte, utilizei um for para percorrer as duas *Strings* que foram obtidas através do arquivo txt.
 Depois, utilizei um for para percorrer cada caractere da *String* com o texto criptografado.
+
+A key foi descoberta utilizando um loop de números que geravam diferentes textos, utilizei a key que produziu uma mensagem com sentido.
 Para cada caractere criptografado, eu verifico sua posição na arraylist com o alfabeto e depois subtraio utilizando o valor da key, para chegar a **uma nova posição que será a posição que vai indicar o caractere da mensagem original.**
 Caso o valor dê negativo, faço vários *ifs*, número a número, para que a tabela seja "percorrida" de forma inversa.
 
